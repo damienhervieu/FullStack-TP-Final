@@ -37,7 +37,7 @@ class Salon
 
     public function __construct()
     {
-        $this->reservation = new ArrayCollection();
+        $this->reservations = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -72,15 +72,15 @@ class Salon
     /**
      * @return Collection|Reservation[]
      */
-    public function getReservation(): Collection
+    public function getReservations(): Collection
     {
-        return $this->reservation;
+        return $this->reservations;
     }
 
     public function addReservation(Reservation $reservation): self
     {
-        if (!$this->reservation->contains($reservation)) {
-            $this->reservation[] = $reservation;
+        if (!$this->reservations->contains($reservation)) {
+            $this->reservations[] = $reservation;
             $reservation->setSalon($this);
         }
 
@@ -89,8 +89,8 @@ class Salon
 
     public function removeReservation(Reservation $reservation): self
     {
-        if ($this->reservation->contains($reservation)) {
-            $this->reservation->removeElement($reservation);
+        if ($this->reservations->contains($reservation)) {
+            $this->reservations->removeElement($reservation);
             // set the owning side to null (unless already changed)
             if ($reservation->getSalon() === $this) {
                 $reservation->setSalon(null);

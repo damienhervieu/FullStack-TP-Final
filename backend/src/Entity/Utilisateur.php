@@ -39,12 +39,7 @@ class Utilisateur
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $password;
-
-    /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Reservation", mappedBy="utilisateur")
-     */
-    private $reservations;
-
+    
     public function __construct()
     {
         $this->reservations = new ArrayCollection();
