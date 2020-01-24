@@ -1,0 +1,19 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+}
+
+.salon {
+    display: flex;
+    width: 35%;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.informations {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}

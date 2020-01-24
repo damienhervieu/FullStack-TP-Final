@@ -24,7 +24,7 @@ class Reservation
     private $debut;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="datetime", nullable=true)
      */
     private $fin;
 
@@ -42,7 +42,17 @@ class Reservation
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $nom;
-    
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $telephone;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $email;
+
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
@@ -65,12 +75,12 @@ class Reservation
         return $this;
     }
 
-    public function getFin(): ?string
+    public function getFin(): ?\DateTimeInterface
     {
         return $this->fin;
     }
 
-    public function setFin(?string $fin): self
+    public function setFin(?\DateTimeInterface $fin): self
     {
         $this->fin = $fin;
 
@@ -97,6 +107,42 @@ class Reservation
     public function setNom(?string $nom): self
     {
         $this->nom = $nom;
+
+        return $this;
+    }
+
+    public function getTelephone(): ?string
+    {
+        return $this->telephone;
+    }
+
+    public function setTelephone(?string $telephone): self
+    {
+        $this->telephone = $telephone;
+
+        return $this;
+    }
+
+    public function getEmail(): ?string
+    {
+        return $this->email;
+    }
+
+    public function setEmail(?string $email): self
+    {
+        $this->email = $email;
+
+        return $this;
+    }
+
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    public function setDescription(?string $description): self
+    {
+        $this->description = $description;
 
         return $this;
     }
