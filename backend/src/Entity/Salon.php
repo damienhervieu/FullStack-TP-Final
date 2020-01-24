@@ -33,7 +33,7 @@ class Salon
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\Reservation", mappedBy="salon")
      */
-    private $reservation;
+    private $reservations;
 
     public function __construct()
     {

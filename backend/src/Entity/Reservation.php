@@ -29,7 +29,7 @@ class Reservation
     private $fin;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Salon", inversedBy="reservation")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Salon", inversedBy="reservations")
      */
     private $salon;
 
