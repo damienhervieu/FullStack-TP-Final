@@ -3,10 +3,16 @@
 namespace App\Entity;
 
 use ApiPlatform\Core\Annotation\ApiResource;
+use Symfony\Component\Serializer\Annotation\Groups;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ApiResource()
+ * @ApiResource(
+ *      denormalizationContext={
+ *          "api_allow_update"=true,
+ *          "groups"={"reservation.write"}
+ *      }
+ * )
  * @ORM\Entity(repositoryClass="App\Repository\ReservationRepository")
  */
 class Reservation
@@ -20,41 +26,49 @@ class Reservation
 
     /**
      * @ORM\Column(type="datetime", nullable=true)
+     * @Groups({"reservation.write"})
      */
     private $debut;
 
     /**
      * @ORM\Column(type="datetime", nullable=true)
+     * @Groups({"reservation.write"})
      */
     private $fin;
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Salon", inversedBy="reservations")
+     * @Groups({"reservation.write"})
      */
     private $salon;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @Groups({"reservation.write"})
      */
     private $prenom;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @Groups({"reservation.write"})
      */
     private $nom;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @Groups({"reservation.write"})
      */
     private $telephone;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @Groups({"reservation.write"})
      */
     private $email;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @Groups({"reservation.write"})
      */
     private $description;
 

@@ -3,14 +3,13 @@ import { Salon } from './salon';
 export class Reservation {
 
     constructor(
-        private id: number = 0,
-        private debut: string = '',
-        private fin: string = '',
-        private salon: Salon | null = null,
-        private prenom: string = '',
-        private nom: string = '',
-        private telephone: string = '',
-        private email: string = ''
+        public id?: number,
+        public debut: string = '',
+        public salon: string = '',
+        public prenom: string = '',
+        public nom: string = '',
+        public telephone: string = '',
+        public email: string = ''
         ) {
     }
 
